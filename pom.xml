@@ -1,0 +1,63 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>8</source>
+          <target>8</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  <parent>
+    <groupId>org.jenkins-ci.plugins</groupId>
+    <artifactId>plugin</artifactId>
+    <version>1.424</version><!-- which version of Jenkins is this plugin built against? -->
+  </parent>
+
+  <groupId>bot-plugin</groupId>
+  <artifactId>botPlugin</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>hpi</packaging>
+
+  <!-- get every artifact through repo.jenkins-ci.org, which proxies all the artifacts that we need -->
+  <repositories>
+    <repository>
+      <id>repo.jenkins-ci.org</id>
+      <url>http://repo.jenkins-ci.org/public/</url>
+    </repository>
+  </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>repo.jenkins-ci.org</id>
+      <url>http://repo.jenkins-ci.org/public/</url>
+    </pluginRepository>
+  </pluginRepositories>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.jenkins-ci.plugins</groupId>
+      <artifactId>credentials</artifactId>
+      <version>2.1.7</version>
+    </dependency>
+    <dependency>
+      <groupId>org.jenkins-ci.plugins.icon-shim</groupId>
+      <artifactId>icon-set</artifactId>
+      <version>2.0.3</version>
+    </dependency>
+    <dependency>
+      <groupId>com.kenai.nbpwr</groupId>
+      <artifactId>edu-umd-cs-findbugs-annotations</artifactId>
+      <version>1.3.2-201002241900</version>
+    </dependency>
+    <dependency>
+      <groupId>org.jenkins-ci.plugins</groupId>
+      <artifactId>plain-credentials</artifactId>
+      <version>1.1</version>
+    </dependency>
+  </dependencies>
+</project>
